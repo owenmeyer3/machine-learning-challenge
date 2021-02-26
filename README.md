@@ -1,93 +1,19 @@
-# Machine Learning Homework - Exoplanet Exploration
+# Overview - Exoplanet Exploration
+This project analyzes exoplanet exploration data. The data set gives values for 20 features and a classification for the status of the planet ('False Positive', 'Candidate' or 'Confirmed). Multiple machine models will be used to evaluate the optimal model for this categorical solution.
 
-![exoplanets.jpg](Images/exoplanets.jpg)
+## Models
+1. All models first break the exoplanet exploration data into feature data and target data. The data is split into training data and testing data.
+2. Preprocessing is preprocessed to scale feature data with a MinMaxScaler, in order to normalize data on a 0.0 to 0.1 scale. Target data is one-hot encoded, which is needed for target data with more than 2 categories.
 
-### Before You Begin
+### Logistic Regression
+1. The Logistic Regression model is fit to the training data and evaluated for accuracy.
+2. The same Logictic model is tuned with gradient descent to modify optimizer parameters. The model is then fit to training data.
+3. Both the base logistic regression model and the gradient descent applied model are tested with test data and compared to see if there is considerable improvement with implementation of gradient descent
 
-1. Create a new repository for this project called `machine-learning-challenge`. **Do not add this homework to an existing repository**.
+### Support Vector Machine (SVM)
+The SVM model uses a strategy as the Logistic regression model. Instead of implementing a logistic regression model, the SVM model is used. Gradient descent is applied to the SVM model as well.
 
-2. Clone the new repository to your computer.
+### Neural Net
+The neural net uses as sequential model. In this project, inputs go through one hidden layer before reaching the output. A classification method is used to evaluate the accuracy of the model. Gradient descent is not an extra step for this model.
 
-3. Give each model you choose their own Jupyter notebook, **do not use more than one model per notebook.**
-
-4. Save your best model to a file. This will be the model used to test your accuracy and used for grading.
-
-5. Commit your Jupyter notebooks and model file and push them to GitHub.
-
-## Note
-
-Keep in mind that this homework is optional! However, you will gain a much greater understanding of testing and tuning different Classification models if you do complete it.
-
-## Background
-
-Over a period of nine years in deep space, the NASA Kepler space telescope has been out on a planet-hunting mission to discover hidden planets outside of our solar system.
-
-To help process this data, you will create machine learning models capable of classifying candidate exoplanets from the raw dataset.
-
-In this homework assignment, you will need to:
-
-1. [Preprocess the raw data](#Preprocessing)
-2. [Tune the models](#Tune-Model-Parameters)
-3. [Compare two or more models](#Evaluate-Model-Performance)
-
-- - -
-
-## Instructions
-
-### Preprocess the Data
-
-* Preprocess the dataset prior to fitting the model.
-* Perform feature selection and remove unnecessary features.
-* Use `MinMaxScaler` to scale the numerical data.
-* Separate the data into training and testing data.
-
-### Tune Model Parameters
-
-* Use `GridSearch` to tune model parameters.
-* Tune and compare at least two different classifiers.
-
-### Reporting
-
-* Create a README that reports a comparison of each model's performance as well as a summary about your findings and any assumptions you can make based on your model (is your model good enough to predict new exoplanets? Why or why not? What would make your model be better at predicting new exoplanets?).
-
-- - -
-
-## Resources
-
-* [Exoplanet Data Source](https://www.kaggle.com/nasa/kepler-exoplanet-search-results)
-
-* [Scikit-Learn Tutorial Part 1](https://www.youtube.com/watch?v=4PXAztQtoTg)
-
-* [Scikit-Learn Tutorial Part 2](https://www.youtube.com/watch?v=gK43gtGh49o&t=5858s)
-
-* [Grid Search](https://scikit-learn.org/stable/modules/grid_search.html)
-
-- - -
-
-## Hints and Considerations
-
-* Start by cleaning the data, removing unnecessary columns, and scaling the data.
-
-* Not all variables are significant be sure to remove any insignificant variables.
-
-* Make sure your `sklearn` package is up to date.
-
-* Try a simple model first, and then tune the model using `GridSearch`.
-
-* When hyper-parameter tuning, some models have parameters that depend on each other, and certain combinations will not create a valid model. Be sure to read through any warning messages and check the documentation
-
-- - -
-
-## Submission
-
-* Create a Jupyter Notebook for each model and host the notebooks on GitHub.
-
-* Create a file for your best model and push to GitHub
-
-* Include a README.md file that summarizes your assumptions and findings.
-
-* Submit the link to your GitHub project to Bootcamp Spot.
-
-* Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
-
-##### © 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+## Evaluation
