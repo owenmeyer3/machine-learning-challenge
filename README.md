@@ -7,13 +7,20 @@ This project analyzes exoplanet exploration data. The data set gives values for 
 
 ### Logistic Regression
 1. The Logistic Regression model is fit to the training data and evaluated for accuracy.
-2. The same Logictic model is tuned with gradient descent to modify optimizer parameters. The model is then fit to training data.
-3. Both the base logistic regression model and the gradient descent applied model are tested with test data and compared to see if there is considerable improvement with implementation of gradient descent
+2. The same model is preprocessed with scaling, encoding and important feature selection.
+3. The model is trained and tested for accuracy at that point
+4. The model is tuned with gradient descent to modify optimizer parameters. The model is then fit to training data and tested for accuracy.
 
 ### Support Vector Machine (SVM)
-The SVM model uses a strategy as the Logistic regression model. Instead of implementing a logistic regression model, the SVM model is used. Gradient descent is applied to the SVM model as well.
+The SVM model uses a strategy as the Logistic regression model. Instead of implementing a logistic regression model, the SVM model is used. Gradient descent is applied to the SVM model as well. The SVM model did not neccesitate classification encoding
 
 ### Neural Net
 The neural net uses as sequential model. In this project, inputs go through one hidden layer before reaching the output. A classification method is used to evaluate the accuracy of the model. Gradient descent is not an extra step for this model.
 
 ## Evaluation
+The most accturate model proved to be the neural network with over 90% accuracy. The SVM model was 64% accurate with the test data and the logistic regression modael was 69% accurate.
+
+All models are saved:
+* Neural Net - neural.h5
+* Logistic Regression = LogisticRegression.sav
+* SVM - svm.sav
